@@ -1,0 +1,21 @@
+<h1>{{model.artist.artistName}}</h1>
+
+{{#if model.songs}}
+  {{#each model.songs as |song|}}
+    <div class="song">
+      <h5>{{song.title}}</h5>
+      <p>
+        {{#if song.playCount}}
+          {{song.playCount}} Listens
+        {{else}}
+          No listens
+        {{/if}}
+      </p>
+    </div>
+  {{/each}}
+{{else}}
+  <p>No Songs</p>
+{{/if}}
+
+{{outlet}}
+{{log model}}
